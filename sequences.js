@@ -1,6 +1,6 @@
 // Dimensions of sunburst.
-var width = 750;
-var height = 600;
+var width = 1000;
+var height = 800;
 var radius = Math.min(width, height) / 2;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.

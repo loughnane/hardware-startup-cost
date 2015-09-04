@@ -3,14 +3,14 @@ body {
   font-size: 12px;
   font-weight: 400;
   background-color: #fff;
-  width: 960px;
-  height: 700px;
+  width: 1280px;
+  height: 933px;
   margin-top: 10px;
 }
 
 #main {
   float: left;
-  width: 750px;
+  width: 1000px;
 }
 
 #sidebar {
@@ -19,7 +19,7 @@ body {
 }
 
 #sequence {
-  width: 600px;
+  width: 800px;
   height: 70px;
 }
 
@@ -42,8 +42,8 @@ body {
 
 #explanation {
   position: absolute;
-  top: 260px;
-  left: 305px;
+  top: 365px;
+  left: 425px;
   width: 140px;
   text-align: center;
   color: #666;

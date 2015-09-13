@@ -11,10 +11,17 @@ var b = {
 // Mapping of step names to colors.
 var colors = {
   "Wages": "#5687d1",
-  "Capital": "#d15587",
-  "Development": "#9f55d1",
-  "Leadership": "#d19f55",
-  "BOM": "#d16255",
+    "Development": "#8caee0",
+      "ME1":"#b4caea",
+      "EE1":"#b4caea",
+      "ES1":"#b4caea",
+      "ID1":"#b4caea",
+    "Leadership": "#8caee0",
+      "CEO":"#b4caea",
+  "COGS": "#d15587",
+  "Fixed": "#d19f55",
+  "Selling": "#87d155",
+  "BOM": "#e08cae",
   "Prototyping": "#d155c4"
 };
 
@@ -108,7 +115,8 @@ function mouseover(d) {
   // Then highlight only those that are an ancestor of the current segment.
   vis.selectAll("path")
       .filter(function(node) {
-                return (sequenceArray.indexOf(node) >= 0);
+                console.log(sequenceArray.indexOf(node));
+                return (sequenceArray.indexOf(node) >=0);
               })
       .style("opacity", 1);
 }

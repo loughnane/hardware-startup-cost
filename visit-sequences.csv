@@ -1,26 +1,41 @@
-Wages-Development-Engineering-Mechanical-ME1,75000
-Wages-Development-Engineering-Electrical-EE1,75000
-Wages-Development-Engineering-Embedded-ES1,75000
-Wages-Development-Design-ID,75000
+Wages-Development-ME1,75000
+Wages-Development-EE1,75000
+Wages-Development-ES1,75000
+Wages-Development-ID1,75000
 Wages-Leadership-CEO,56250
-Capital-Prototyping,20000
-Capital-BOM-Molded-Ear_Cup_Base_Left,900
-Capital-BOM-Molded-Ear_Cup_Base_Right,900
-Capital-BOM-Molded-Band_Substrate,3400
-Capital-BOM-Molded-Band_Rubber,2700
-Capital-BOM-Molded-Band_Underside,1100
-Capital-BOM-Molded-Battery_Door,1100
-Capital-BOM-Stamped-Band_Spring,4150
-Capital-BOM-Stamped-Ear_Cup_Covers,10100
-Capital-BOM-Purchased-Speaker_Drivers,11000
-Capital-BOM-Purchased-Accessory_Cable,2500
-Capital-BOM-Purchased-Lithium_Polymer_Battery,12200
-Capital-BOM-Purchased-Headphone_Bag,4250
-Capital-BOM-Purchased-Screw,800
-Capital-BOM-Purchased-Glue,4500
-Capital-BOM-Electronics-PCB_Main,47450
-Capital-BOM-Electronics-PCB_Daughter,21100
-Capital-BOM-Packaging-Master_Carton,500
-Capital-BOM-Packaging-Gift_Box,17900
-Capital-BOM-Packaging-Gift_Box_Top_Insert,7250
-Capital-BOM-Packaging-Gift_Box_Bottom_Insert,7000
+Prototyping,20000
+COGS-BOM-Molded-Ear_Cup_Base_Left,900
+COGS-BOM-Molded-Ear_Cup_Base_Right,900
+COGS-BOM-Molded-Band_Substrate,3400
+COGS-BOM-Molded-Band_Rubber,2700
+COGS-BOM-Molded-Band_Underside,1100
+COGS-BOM-Molded-Battery_Door,1100
+COGS-BOM-Stamped-Band_Spring,4150
+COGS-BOM-Stamped-Ear_Cup_Covers,10100
+COGS-BOM-Purchased-Speaker_Drivers,11000
+COGS-BOM-Purchased-Accessory_Cable,2500
+COGS-BOM-Purchased-Lithium_Polymer_Battery,12200
+COGS-BOM-Purchased-Headphone_Bag,4250
+COGS-BOM-Purchased-Screw,800
+COGS-BOM-Purchased-Glue,4500
+COGS-BOM-Electronics-PCB_Main,47450
+COGS-BOM-Electronics-PCB_Daughter,21100
+COGS-BOM-Packaging-Master_Carton,500
+COGS-BOM-Packaging-Gift_Box,17900
+COGS-BOM-Packaging-Gift_Box_Top_Insert,7250
+COGS-BOM-Packaging-Gift_Box_Bottom_Insert,7000
+COGS-Labor,4150
+COGS-CM Profit Margin,8050
+COGS-Scrap,8050
+COGS-Duties,8050
+COGS-Freight,20000
+COGS-3PL,11250
+COGS-Returns,16000
+Fixed-CM NRE,25000
+Fixed-EVT & DVT Builds,16100
+Fixed-Injecftion Molding Tools,30000
+Fixed-Stamping Tools,5000
+Fixed-FCC Bluetooth Certificaftion,5000
+Fixed-UL Certification,15000
+Selling-Processing Fee,24750
+Selling-Order Fullfillment,11800

@@ -38,6 +38,7 @@ body {
 
 #chart path {
   stroke: #fff;
+  stroke-width: 2px;
 }
 
 #explanation {

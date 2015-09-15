@@ -5,11 +5,12 @@ var radius = Math.min(width, height) / 2;
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
-  w: 75, h: 30, s: 3, t: 10
+  w: 200, h: 30, s: 3, t: 10
 };
 
 // Mapping of step names to colors.
 var colors = {
+  "Empty": "#ffffff",
   "Wages": "#5687d1",
     "Development": "#8caee0",
       "ME1":"#b4caea",
@@ -19,10 +20,55 @@ var colors = {
     "Leadership": "#8caee0",
       "CEO":"#b4caea",
   "COGS": "#d15587",
+    "BOM": "#e08cae",
+      "Electronics": "#eab4ca",
+        "PCB_Main" : "#f0c8d8",
+        "PCB_Daughter" : "#f0c8d8",
+        "Lithium_Polymer_Battery" : "#f0c8d8",
+        "Speaker_Drivers" : "#f0c8d8",
+        "Glue" : "#f0c8d8",
+        "Headphone_Bag" : "#f0c8d8",
+        "Accessory_Cable" : "#f0c8d8",
+        "Screw" : "#f0c8d8",
+        "Gift_Box" : "#f0c8d8",
+        "Gift_Box_Top_Insert" : "#f0c8d8",
+        "Gift_Box_Bottom_Insert" : "#f0c8d8",
+        "Ear_Cup_Covers" : "#f0c8d8",
+        "Band_Spring" : "#f0c8d8",
+        "Band_Substrate" : "#f0c8d8",
+        "Band_Rubber" : "#f0c8d8",
+        "Band_Underside" : "#f0c8d8",
+        "Battery_Door" : "#f0c8d8",
+        "Ear_Cup_Base_Left" : "#f0c8d8",
+        "Ear_Cup_Base_Right" : "#f0c8d8",
+
+      "Purchased": "#eab4ca",
+      "Packaging": "#eab4ca",
+      "Stamped": "#eab4ca",
+      "Molded": "#eab4ca",
+    "Freight": "#f0c8d8",
+    "Returns": "#f0c8d8",
+    "3PL": "#f0c8d8",
+    "CM Profit Margin": "#f0c8d8",
+    "Scrap": "#f0c8d8",
+    "Duties": "#f0c8d8",
+    "Labor": "#f0c8d8",
   "Fixed": "#d19f55",
+    "CM NRE": "#dcb780",
+    "EVT & DVT Builds": "#dcb780",
+    "UL Certification": "#dcb780",
+    "FCC Bluetooth Certification": "#dcb780",
+    "Stamping Tools": "#dcb780",
+    "Injection Molding Tools": "#dcb780",
+
+
   "Selling": "#87d155",
-  "BOM": "#e08cae",
-  "Prototyping": "#d155c4"
+    "Processing Fee": "#b9e49c",
+    "Order Fullfillment": "#b9e49c",
+  
+  "Prototyping": "#d155c4",
+    "SLA" : "#e18fd9",
+    "Machined" : "#e18fd9"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -230,7 +276,7 @@ function drawLegend() {
 
   // Dimensions of legend item: width, height, spacing, radius of rounded rect.
   var li = {
-    w: 75, h: 30, s: 3, r: 3
+    w: 150, h: 30, s: 3, r: 3
   };
 
   var legend = d3.select("#legend").append("svg:svg")

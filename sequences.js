@@ -9,66 +9,14 @@ var b = {
 };
 
 // Mapping of step names to colors.
+
 var colors = {
   "Empty": "#ffffff",
-  "Wages": "#5687d1",
-    "Development": "#8caee0",
-      "ME1":"#b4caea",
-      "EE1":"#b4caea",
-      "ES1":"#b4caea",
-      "ID1":"#b4caea",
-    "Leadership": "#8caee0",
-      "CEO":"#b4caea",
-  "COGS": "#d15587",
-    "BOM": "#e08cae",
-      "Electronics": "#eab4ca",
-        "PCB_Main" : "#f0c8d8",
-        "PCB_Daughter" : "#f0c8d8",
-        "Lithium_Polymer_Battery" : "#f0c8d8",
-        "Speaker_Drivers" : "#f0c8d8",
-        "Glue" : "#f0c8d8",
-        "Headphone_Bag" : "#f0c8d8",
-        "Accessory_Cable" : "#f0c8d8",
-        "Screw" : "#f0c8d8",
-        "Gift_Box" : "#f0c8d8",
-        "Gift_Box_Top_Insert" : "#f0c8d8",
-        "Gift_Box_Bottom_Insert" : "#f0c8d8",
-        "Ear_Cup_Covers" : "#f0c8d8",
-        "Band_Spring" : "#f0c8d8",
-        "Band_Substrate" : "#f0c8d8",
-        "Band_Rubber" : "#f0c8d8",
-        "Band_Underside" : "#f0c8d8",
-        "Battery_Door" : "#f0c8d8",
-        "Ear_Cup_Base_Left" : "#f0c8d8",
-        "Ear_Cup_Base_Right" : "#f0c8d8",
-
-      "Purchased": "#eab4ca",
-      "Packaging": "#eab4ca",
-      "Stamped": "#eab4ca",
-      "Molded": "#eab4ca",
-    "Freight": "#f0c8d8",
-    "Returns": "#f0c8d8",
-    "3PL": "#f0c8d8",
-    "CM Profit Margin": "#f0c8d8",
-    "Scrap": "#f0c8d8",
-    "Duties": "#f0c8d8",
-    "Labor": "#f0c8d8",
-  "Fixed": "#d19f55",
-    "CM NRE": "#dcb780",
-    "EVT & DVT Builds": "#dcb780",
-    "UL Certification": "#dcb780",
-    "FCC Bluetooth Certification": "#dcb780",
-    "Stamping Tools": "#dcb780",
-    "Injection Molding Tools": "#dcb780",
-
-
-  "Selling": "#87d155",
-    "Processing Fee": "#b9e49c",
-    "Order Fullfillment": "#b9e49c",
-  
-  "Prototyping": "#d155c4",
-    "SLA" : "#e18fd9",
-    "Machined" : "#e18fd9"
+  "Wages": "#8da0cb",
+  "COGS": "#e78ac3",
+  "Fixed Costs": "#a6d854",
+  "Selling": "#66c2a5",
+  "Prototyping": "#fc8d62",
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -110,7 +58,7 @@ function createVisualization(json) {
   // Bounding circle underneath the sunburst, to make it easier to detect
   // when the mouse leaves the parent g.
   vis.append("svg:circle")
-      .attr("r", radius)
+      .attr("r", radius+50)
       .style("opacity", 0);
 
   // For efficiency, filter nodes to keep only those large enough to see.
@@ -125,8 +73,17 @@ function createVisualization(json) {
       .attr("display", function(d) { return d.depth ? null : "none"; })
       .attr("d", arc)
       .attr("fill-rule", "evenodd")
-      .style("fill", function(d) { return colors[d.name]; })
-      .style("opacity", 1)
+      .style("fill", function(d) { 
+        if (d.name!="Empty"){
+          while (d.parent){
+            if (d.parent.name == "root"){break;}
+            d = d.parent
+          };
+        }
+        return colors[d.name]; })
+      .style("opacity", function(d){
+        return 1- (5-d.depth)*.1;
+      })
       .on("mouseover", mouseover);
 
   // Add the mouseleave handler to the bounding circle.
@@ -138,21 +95,29 @@ function createVisualization(json) {
 
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
+  if (d.name!="Empty"){
 
   var percentage = (100 * d.value / totalSize).toPrecision(3);
-  var percentageString = percentage + "%";
-  if (percentage < 0.1) {
-    percentageString = "< 0.1%";
+  var total = (d.value/1000).toPrecision(4);
+  var totalString = "$" + total + "k"
+  if (total < 1) {
+    totalString = "< $1k";
   }
 
-  d3.select("#percentage")
-      .text(percentageString);
+  d3.select("#total")
+    .text(totalString);
 
   d3.select("#explanation")
       .style("visibility", "");
 
-  var sequenceArray = getAncestors(d);
-  updateBreadcrumbs(sequenceArray, percentageString);
+  if (d.name != "Empty"){
+    d3.select("#node")
+      .text(d.name)}
+
+  var ancestorArray = getAncestors(d);
+  var descendantArray = getDescendants(d);
+
+  updateBreadcrumbs(ancestorArray, totalString);
 
   // Fade all the segments.
   d3.selectAll("path")
@@ -161,14 +126,15 @@ function mouseover(d) {
   // Then highlight only those that are an ancestor of the current segment.
   vis.selectAll("path")
       .filter(function(node) {
-                console.log(sequenceArray.indexOf(node));
-                return (sequenceArray.indexOf(node) >=0);
+
+                return (descendantArray.indexOf(node) >=0);
               })
       .style("opacity", 1);
-}
+}}
 
 // Restore everything to full opacity when moving off the visualization.
 function mouseleave(d) {
+  if (d.name != "Empty"){
 
   // Hide the breadcrumb trail
   d3.select("#trail")
@@ -180,15 +146,20 @@ function mouseleave(d) {
   // Transition each segment to full opacity and then reactivate it.
   d3.selectAll("path")
       .transition()
-      .duration(1000)
-      .style("opacity", 1)
+      .duration(500)
+      // .style("opacity", 1)
+      .style("opacity", function(d){
+        return 1- (5-d.depth)*.1;
+      })
+
+
       .each("end", function() {
               d3.select(this).on("mouseover", mouseover);
             });
 
   d3.select("#explanation")
       .style("visibility", "hidden");
-}
+}}
 
 // Given a node in a partition layout, return an array of all of its ancestor
 // nodes, highest first, but excluding the root.
@@ -196,11 +167,28 @@ function getAncestors(node) {
   var path = [];
   var current = node;
   while (current.parent) {
-    path.unshift(current);
+    if (current.name!="Empty"){
+    path.unshift(current);}
     current = current.parent;
   }
   return path;
 }
+
+
+function getDescendants(root) {    
+  var nodes = [], i = 0;
+
+  function recurse(node) {
+      if (node.children){ 
+          node.size = node.children.reduce(function(p, v) { return p + recurse(v); }, 0);}
+      if (!node.id){ 
+          node.id = ++i;}
+      nodes.push(node);
+      return node.size;}
+
+root.size = recurse(root);
+return nodes;}
+
 
 function initializeBreadcrumbTrail() {
   // Add the svg area.
@@ -229,19 +217,28 @@ function breadcrumbPoints(d, i) {
 }
 
 // Update the breadcrumb trail to show the current sequence and percentage.
-function updateBreadcrumbs(nodeArray, percentageString) {
+function updateBreadcrumbs(nodeArray, totalString) {
 
   // Data join; key function combines name and depth (= position in sequence).
   var g = d3.select("#trail")
       .selectAll("g")
       .data(nodeArray, function(d) { return d.name + d.depth; });
 
+
   // Add breadcrumb and label for entering nodes.
   var entering = g.enter().append("svg:g");
 
   entering.append("svg:polygon")
       .attr("points", breadcrumbPoints)
-      .style("fill", function(d) { return colors[d.name]; });
+      // .style("fill", function(d) { return colors[d.name]; });
+      .style("fill", function(d) { 
+        if (d.name!="Empty"){
+          while (d.parent){
+            if (d.parent.name == "root"){break;}
+            d = d.parent
+          };
+        }
+        return colors[d.name]; })
 
   entering.append("svg:text")
       .attr("x", (b.w + b.t) / 2)
@@ -264,7 +261,7 @@ function updateBreadcrumbs(nodeArray, percentageString) {
       .attr("y", b.h / 2)
       .attr("dy", "0.35em")
       .attr("text-anchor", "middle")
-      .text(percentageString);
+      .text(totalString);
 
   // Make the breadcrumb trail visible, if it's hidden.
   d3.select("#trail")

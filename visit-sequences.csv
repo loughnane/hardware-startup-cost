@@ -1,8 +1,8 @@
-Wages-Development-Empty-Empty-ME1,75000
-Wages-Development-Empty-Empty-EE1,75000
-Wages-Development-Empty-Empty-ES1,75000
-Wages-Development-Empty-Empty-ID1,56250
-Wages-Leadership-Empty-Empty-CEO,20000
+Wages-Development Wages-Empty-Empty-Mechanical Engineer,75000,Mechanical engineers are the best!
+Wages-Development Wages-Empty-Empty-Electrical Engineer,75000
+Wages-Development Wages-Empty-Empty-Embedded SW Engineer,75000
+Wages-Development Wages-Empty-Empty-Industrial Designer,56250
+Wages-Leadership Wages-Empty-Empty-CEO,20000
 Prototyping-Empty-Empty-Empty-SLA,5000
 Prototyping-Empty-Empty-Empty-Machined,15000
 COGS-BOM-Molded-Empty-Ear_Cup_Base_Left,900
@@ -13,12 +13,12 @@ COGS-BOM-Molded-Empty-Band_Underside,1100
 COGS-BOM-Molded-Empty-Battery_Door,1100
 COGS-BOM-Stamped-Empty-Band_Spring,4150
 COGS-BOM-Stamped-Empty-Ear_Cup_Covers,10100
-COGS-BOM-Purchased-Empty-Speaker_Drivers,11000
-COGS-BOM-Purchased-Empty-Accessory_Cable,2500
-COGS-BOM-Purchased-Empty-Lithium_Polymer_Battery,12200
-COGS-BOM-Purchased-Empty-Headphone_Bag,4250
-COGS-BOM-Purchased-Empty-Screw,800
-COGS-BOM-Purchased-Empty-Glue,4500
+COGS-BOM-Purchased Parts-Empty-Speaker_Drivers,11000
+COGS-BOM-Purchased Parts-Empty-Accessory_Cable,2500
+COGS-BOM-Purchased Parts-Empty-Lithium_Polymer_Battery,12200
+COGS-BOM-Purchased Parts-Empty-Headphone_Bag,4250
+COGS-BOM-Purchased Parts-Empty-Screw,800
+COGS-BOM-Purchased Parts-Empty-Glue,4500
 COGS-BOM-Electronics-Empty-PCB_Main,47450
 COGS-BOM-Electronics-Empty-PCB_Daughter,21100
 COGS-BOM-Packaging-Empty-Master_Carton,500
@@ -32,11 +32,11 @@ COGS-Empty-Empty-Empty-Duties,8050
 COGS-Empty-Empty-Empty-Freight,20000
 COGS-Empty-Empty-Empty-3PL,11250
 COGS-Empty-Empty-Empty-Returns,16000
-Fixed-Empty-Empty-Empty-CM NRE,25000
-Fixed-Empty-Empty-Empty-EVT & DVT Builds,16100
-Fixed-Empty-Empty-Empty-Injection Molding Tools,30000
-Fixed-Empty-Empty-Empty-Stamping Tools,5000
-Fixed-Empty-Empty-Empty-FCC Bluetooth Certification,5000
-Fixed-Empty-Empty-Empty-UL Certification,15000
+Fixed Costs-Empty-Empty-Empty-CM NRE,25000
+Fixed Costs-Empty-Empty-Empty-EVT & DVT Builds,16100
+Fixed Costs-Empty-Empty-Empty-Injection Molding Tools,30000
+Fixed Costs-Empty-Empty-Empty-Stamping Tools,5000
+Fixed Costs-Empty-Empty-Empty-FCC Bluetooth Certification,5000
+Fixed Costs-Empty-Empty-Empty-UL Certification,15000
 Selling-Empty-Empty-Empty-Processing Fee,24750
 Selling-Empty-Empty-Empty-Order Fullfillment,11800

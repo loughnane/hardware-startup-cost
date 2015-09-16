@@ -15,8 +15,8 @@ var colors = {
   "Wages": "#8da0cb",
   "COGS": "#e78ac3",
   "Fixed Costs": "#a6d854",
-  "Selling": "#66c2a5",
-  "Prototyping": "#fc8d62",
+  "Selling Costs": "#66c2a5",
+  "Prototyping Costs": "#fc8d62",
 };
 
 // Total size of all segments; we set this later, after loading the data.

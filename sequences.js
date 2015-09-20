@@ -41,15 +41,16 @@ var arc = d3.svg.arc()
 
 // Use d3.text and d3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3.text("visit-sequences.csv", function(text) {
+d3.text("costs.csv", function(text) {
   var csv = d3.csv.parseRows(text);
   var json = buildHierarchy(csv);
+  // console.log(json);
   createVisualization(json);
 });
 
 // Main function to draw and set up the visualization, once we have the data.
 function createVisualization(json) {
-
+  console.log(json);
   // Basic setup of page elements.
   initializeBreadcrumbTrail();
   drawLegend();
@@ -96,6 +97,7 @@ function createVisualization(json) {
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
   if (d.name!="Empty"){
+    console.log(d.description);
 
   var percentage = (100 * d.value / totalSize).toPrecision(3);
   var total = (d.value/1000).toPrecision(4);
@@ -107,13 +109,17 @@ function mouseover(d) {
   d3.select("#total")
     .text(totalString);
 
+  d3.select("#description")
+    .text(d.description)
+    .style("visibility", "");
+
   d3.select("#explanation")
       .style("visibility", "");
 
   if (d.name != "Empty"){
     d3.select("#node")
       .text(d.name)}
-
+  // console.log(d.description)
   var ancestorArray = getAncestors(d);
   var descendantArray = getDescendants(d);
 
@@ -138,6 +144,8 @@ function mouseleave(d) {
 
   // Hide the breadcrumb trail
   d3.select("#trail")
+      .style("visibility", "hidden");
+  d3.select("#description")
       .style("visibility", "hidden");
 
   // Deactivate all segments during transition.
@@ -316,39 +324,51 @@ function toggleLegend() {
 // root to leaf, separated by hyphens. The second column is a count of how 
 // often that sequence occurred.
 function buildHierarchy(csv) {
-  var root = {"name": "root", "children": []};
+  var root = {"name": "root", "children": [],"description": "none"};
   for (var i = 0; i < csv.length; i++) {
     var sequence = csv[i][0];
     var size = +csv[i][1];
+    var description = csv[i].slice(2)
+    // console.log(typeof description)
+    if (typeof description == "array"){
+      description = description.slice(0).join(',');
+    }
+    // console.log(description);
     if (isNaN(size)) { // e.g. if this is a header row
       continue;
     }
     var parts = sequence.split("-");
+    // console.log(parts.length);
     var currentNode = root;
     for (var j = 0; j < parts.length; j++) {
       var children = currentNode["children"];
+      // console.log(children)
       var nodeName = parts[j];
+      // console.log(nodeName);
       var childNode;
+      // console.log(j+1,parts.length)
       if (j + 1 < parts.length) {
    // Not yet at the end of the sequence; move down the tree.
- 	var foundChild = false;
- 	for (var k = 0; k < children.length; k++) {
- 	  if (children[k]["name"] == nodeName) {
- 	    childNode = children[k];
- 	    foundChild = true;
- 	    break;
- 	  }
- 	}
+ 	    var foundChild = false;
+     	for (var k = 0; k < children.length; k++) {
+     	  if (children[k]["name"] == nodeName) {
+     	    childNode = children[k];
+     	    foundChild = true;
+     	    break;
+ 	      }  
+ 	    }
   // If we don't already have a child node for this branch, create it.
- 	if (!foundChild) {
- 	  childNode = {"name": nodeName, "children": []};
- 	  children.push(childNode);
- 	}
- 	currentNode = childNode;
-      } else {
- 	// Reached the end of the sequence; create a leaf node.
- 	childNode = {"name": nodeName, "size": size};
- 	children.push(childNode);
+     	if (!foundChild) {
+        // console.log(nodeName,size,description)
+     	  childNode = {"name": nodeName, "children": [],"description":description};
+     	  children.push(childNode);
+     	}
+     	currentNode = childNode;
+          } else {
+     	// Reached the end of the sequence; create a leaf node.
+      // console.log(nodeName,size,description)
+     	childNode = {"name": nodeName, "size": size,"description":description};
+     	children.push(childNode);
       }
     }
   }

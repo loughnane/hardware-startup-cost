@@ -1,10 +1,10 @@
-Wages-Development-Empty-Empty-ME1,56520
-Wages-Development-Empty-Empty-EE1,75000
-Wages-Development-Empty-Empty-ES1,75000
-Wages-Development-Empty-Empty-ID1,75000
+Wages-Development-Empty-Empty-Mechanical Engineer,75000, Mechanical Engineers are responsible for every physical element that is not the circuit board. They will spend a lot of time thinking about how the parts will be fabricated & assembled, as well as how well the finished good will stand up to They generally work closely with Industrial Designers and Electrical Engineers.
+Wages-Development-Empty-Empty-Electrical Engineer,75000, Electrical Engineers are responsible for the design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
+Wages-Development-Empty-Empty-Embedded Engineer,75000
+Wages-Development-Empty-Empty-Industrial Designer,75000
 Wages-Leadership-Empty-Empty-CEO,56250
-Prototyping Costs-Empty-Empty-Empty-SLA,20000
-Prototyping Costs-Empty-Empty-Empty-Machined,20000
+Prototyping Costs-Empty-Empty-Empty-Mechanical,20000
+Prototyping Costs-Empty-Empty-Empty-Electrical,20000
 COGS-BOM-Molded-Empty-Left Ear Cup Base,900
 COGS-BOM-Molded-Empty-Right Ear Cup Base,900
 COGS-BOM-Molded-Empty-Band Substrate,3400
@@ -40,3 +40,4 @@ Fixed Costs-Certifications-Empty-Empty-FCC Bluetooth Certification,5000
 Fixed Costs-Certifications-Empty-Empty-UL Certification,15000
 Selling Costs-Empty-Empty-Empty-Processing Fee,24750
 Selling Costs-Empty-Empty-Empty-Order Fullfillment,11800
+Selling Costs, 0,This is a test

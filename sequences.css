@@ -10,12 +10,17 @@ body {
 
 #main {
   float: left;
-  width: 1000px;
+  width: 1500px;
 }
 
 #sidebar {
   float: right;
-  width: 100px;
+  width: 300px;
+}
+
+#description   {
+  float: left;
+  font-size: 2.0em;
 }
 
 #sequence {
@@ -26,7 +31,7 @@ body {
 #legend {
   padding: 10px 0 0 3px;
 }
-
+s
 #sequence text, #legend text {
   font-weight: 600;
   fill: #fff;
@@ -34,6 +39,7 @@ body {
 
 #chart {
   position: relative;
+  float: left;
 }
 
 #chart path {

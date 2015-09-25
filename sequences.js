@@ -43,18 +43,34 @@ var arc = d3.svg.arc()
 // row, and can receive the csv as an array of arrays.
 d3.text("costs.csv", function(text) {
   var csv = d3.csv.parseRows(text);
-  var json = buildHierarchy(csv);
-  // console.log(json);
-  createVisualization(json);
+  var csvPath = [];
+  var csvDesc = []
+  paths = true;
+  for (var i = 0; i < csv.length; i++){
+    if (csv[i].length==1){
+      paths=false;
+    }
+    if(paths==true){
+      csvPath[i]=csv[i];
+    }
+    else{
+      row = csv[i];
+      csvDesc.push({"name": row[0],"description":row.slice(1)});
+    }
+    // var description = csv[i].slice(2)
+  }
+  delete csvDesc[0]
+  var json = buildHierarchy(csvPath);
+  createVisualization(json,csvDesc);
 });
 
 // Main function to draw and set up the visualization, once we have the data.
-function createVisualization(json) {
-  console.log(json);
+function createVisualization(json,csvDesc) {
   // Basic setup of page elements.
   initializeBreadcrumbTrail();
   drawLegend();
   d3.select("#togglelegend").on("click", toggleLegend);
+
 
   // Bounding circle underneath the sunburst, to make it easier to detect
   // when the mouse leaves the parent g.
@@ -62,11 +78,26 @@ function createVisualization(json) {
       .attr("r", radius+50)
       .style("opacity", 0);
 
+  // console.log(json);
   // For efficiency, filter nodes to keep only those large enough to see.
   var nodes = partition.nodes(json)
       .filter(function(d) {
       return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
       });
+      
+  // console.log(nodes);   
+  console.log(csvDesc[1]);   
+  for (var i=0;i<nodes.length;i++){
+    name = nodes[i]["name"];
+    // console.log(name);
+    for (var j=1; j<csvDesc.length;j++){
+      if (name==csvDesc[j]["name"]){
+        nodes[i]["description"]=csvDesc[j]["description"];
+      }
+    }
+    
+  }
+
 
   var path = vis.data([json]).selectAll("path")
       .data(nodes)
@@ -97,7 +128,6 @@ function createVisualization(json) {
 // Fade all but the current sequence, and show it in the breadcrumb trail.
 function mouseover(d) {
   if (d.name!="Empty"){
-    console.log(d.description);
 
   var percentage = (100 * d.value / totalSize).toPrecision(3);
   var total = (d.value/1000).toPrecision(4);
@@ -108,7 +138,7 @@ function mouseover(d) {
 
   d3.select("#total")
     .text(totalString);
-
+  console.log(d.description);
   d3.select("#description")
     .text(d.description)
     .style("visibility", "");
@@ -119,7 +149,8 @@ function mouseover(d) {
   if (d.name != "Empty"){
     d3.select("#node")
       .text(d.name)}
-  // console.log(d.description)
+
+
   var ancestorArray = getAncestors(d);
   var descendantArray = getDescendants(d);
 
@@ -194,8 +225,8 @@ function getDescendants(root) {
       nodes.push(node);
       return node.size;}
 
-root.size = recurse(root);
-return nodes;}
+  root.size = recurse(root);
+  return nodes;}
 
 
 function initializeBreadcrumbTrail() {
@@ -274,7 +305,6 @@ function updateBreadcrumbs(nodeArray, totalString) {
   // Make the breadcrumb trail visible, if it's hidden.
   d3.select("#trail")
       .style("visibility", "");
-
 }
 
 function drawLegend() {
@@ -324,11 +354,10 @@ function toggleLegend() {
 // root to leaf, separated by hyphens. The second column is a count of how 
 // often that sequence occurred.
 function buildHierarchy(csv) {
-  var root = {"name": "root", "children": [],"description": "none"};
+  var root = {"name": "root", "children": []};
   for (var i = 0; i < csv.length; i++) {
     var sequence = csv[i][0];
     var size = +csv[i][1];
-    var description = csv[i].slice(2)
     // console.log(typeof description)
     if (typeof description == "array"){
       description = description.slice(0).join(',');
@@ -360,17 +389,16 @@ function buildHierarchy(csv) {
   // If we don't already have a child node for this branch, create it.
      	if (!foundChild) {
         // console.log(nodeName,size,description)
-     	  childNode = {"name": nodeName, "children": [],"description":description};
+     	  childNode = {"name": nodeName, "children": []};
      	  children.push(childNode);
      	}
      	currentNode = childNode;
           } else {
      	// Reached the end of the sequence; create a leaf node.
-      // console.log(nodeName,size,description)
-     	childNode = {"name": nodeName, "size": size,"description":description};
+     	childNode = {"name": nodeName, "size": size};
      	children.push(childNode);
       }
     }
   }
   return root;
-};
+};mouseover

@@ -1,7 +1,7 @@
-Wages-Development-Empty-Empty-Mechanical Engineer,75000, Mechanical Engineers are responsible for every physical element that is not the circuit board. They will spend a lot of time thinking about how the parts will be fabricated & assembled, as well as how well the finished good will stand up to They generally work closely with Industrial Designers and Electrical Engineers.
-Wages-Development-Empty-Empty-Electrical Engineer,75000, Electrical Engineers are responsible for the design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
-Wages-Development-Empty-Empty-Embedded Engineer,75000
-Wages-Development-Empty-Empty-Industrial Designer,75000
+Wages-Development Wages-Empty-Empty-Mechanical Engineer,75000
+Wages-Development Wages-Empty-Empty-Electrical Engineer,75000
+Wages-Development Wages-Empty-Empty-Embedded Engineer,75000
+Wages-Development Wages-Empty-Empty-Industrial Designer,75000
 Wages-Leadership-Empty-Empty-CEO,56250
 Prototyping Costs-Empty-Empty-Empty-Mechanical,20000
 Prototyping Costs-Empty-Empty-Empty-Electrical,20000
@@ -40,4 +40,10 @@ Fixed Costs-Certifications-Empty-Empty-FCC Bluetooth Certification,5000
 Fixed Costs-Certifications-Empty-Empty-UL Certification,15000
 Selling Costs-Empty-Empty-Empty-Processing Fee,24750
 Selling Costs-Empty-Empty-Empty-Order Fullfillment,11800
-Selling Costs, 0,This is a test
+
+
+Mechanical Engineer, Mechanical Engineers are responsible for every physical element that is not the circuit board. They will spend a lot of time thinking about how the parts will be fabricated & assembled, as well as how well the finished good will stand up to They generally work closely with Industrial Designers and Electrical Engineers.
+Electrical Engineer, Electrical Engineers are responsible for the design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
+Embedded Engineer, Embedded Engineers are responsible for the software that runs on the PCB. This includes driving logic for audio, bluetooth, power management, etc.
+Industrial Designer, Industrial designers make sure the device looks and behaves like something people will want to buy.
+Development Wages, This is what you will need to pay barebones team: 1 ME, 1 EE, 1 ES, & 1 ID.

@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   background-color: #fff;
   width: 1280px;
@@ -12,10 +12,16 @@ body {
   float: left;
   width: 1500px;
 }
+#intro {
+  float: left;
+  /*width: 800px;*/
+  height: 100px;
+  font-size: 24px;
+}
 
 #sidebar {
-  float: right;
-  width: 300px;
+  float: left;
+  width: 500px;
 }
 
 #description   {
@@ -24,6 +30,7 @@ body {
 }
 
 #sequence {
+  float:bottom;
   width: 800px;
   height: 70px;
 }

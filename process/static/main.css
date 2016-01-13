@@ -1,0 +1,36 @@
+#background{
+	fill:#fff;
+}
+
+.row{
+	fill-opacity:40%;
+}
+
+
+#pm{
+	fill:#f5b5c8;
+}
+
+#id{
+	fill:#ce6925;
+}
+
+#me{
+	fill:#83bbe5;
+}
+
+#ee{
+	fill:#5abaa7;
+}
+
+#es{
+	fill:#ffdf71;
+}
+
+.cell.active{
+	fill:#333333;
+}
+
+.cell.inactive{
+	fill-opacity:10%;
+}

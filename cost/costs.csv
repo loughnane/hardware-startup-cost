@@ -1,0 +1,70 @@
+Wages-Development Wages-Empty-Empty-Mechanical Engineer,75000
+Wages-Development Wages-Empty-Empty-Electrical Engineer,75000
+Wages-Development Wages-Empty-Empty-Embedded Engineer,75000
+Wages-Development Wages-Empty-Empty-Industrial Designer,75000
+Wages-Leadership-Empty-Empty-CEO,56250
+Prototyping Costs-Empty-Empty-Empty-Mechanical,20000
+Prototyping Costs-Empty-Empty-Empty-Electrical,20000
+COGS-BOM-Molded-Empty-Left Ear Cup Base,900
+COGS-BOM-Molded-Empty-Right Ear Cup Base,900
+COGS-BOM-Molded-Empty-Band Substrate,3400
+COGS-BOM-Molded-Empty-Band Rubber,2700
+COGS-BOM-Molded-Empty-Band Underside,1100
+COGS-BOM-Molded-Empty-Battery Door,1100
+COGS-BOM-Stamped-Empty-Band Spring,4150
+COGS-BOM-Stamped-Empty-Ear Cup Covers,10100
+COGS-BOM-Purchased-Empty-Speaker Drivers,11000
+COGS-BOM-Purchased-Empty-Accessory Cable,2500
+COGS-BOM-Purchased-Empty-LiPo Battery,12200
+COGS-BOM-Purchased-Empty-Headphone Bag,4250
+COGS-BOM-Purchased-Empty-Screw,800
+COGS-BOM-Purchased-Empty-Glue,4500
+COGS-BOM-Electronics-Empty-Main PCB,47450
+COGS-BOM-Electronics-Empty-Daughter PCB,21100
+COGS-BOM-Packaging-Empty-Master Carton,500
+COGS-BOM-Packaging-Empty-Gift Box,17900
+COGS-BOM-Packaging-Empty-Gift Box Top Insert,7250
+COGS-BOM-Packaging-Empty-Gift Box Bottom Insert,7000
+COGS-Assembly-Empty-Empty-Labor,4150
+COGS-Assembly-Empty-Empty-CM Profit Margin,8050
+COGS-Empty-Empty-Empty-Scrap,8050
+COGS-Empty-Empty-Empty-Duties,8050
+COGS-Empty-Empty-Empty-Freight,20000
+COGS-Empty-Empty-Empty-3PL,11250
+COGS-Empty-Empty-Empty-Returns,16000
+Fixed Costs-Empty-Empty-Empty-CM NRE,25000
+Fixed Costs-Empty-Empty-Empty-EVT & DVT Builds,16100
+Fixed Costs-Tooling-Empty-Empty-Injection Molding Tools,30000
+Fixed Costs-Tooling-Empty-Empty-Stamping Tools,5000
+Fixed Costs-Certifications-Empty-Empty-FCC Bluetooth Certification,5000
+Fixed Costs-Certifications-Empty-Empty-UL Certification,15000
+Selling Costs-Empty-Empty-Empty-Processing Fee,24750
+Selling Costs-Empty-Empty-Empty-Order Fullfillment,11800
+
+
+Mechanical Engineer, Mechanical Engineers are responsible for every physical element that is not the circuit board. They will spend a lot of time thinking about how the parts will be fabricated & assembled, as well as how well the finished good will stand up to They generally work closely with Industrial Designers and Electrical Engineers.
+Electrical Engineer, Electrical Engineers are responsible for the design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
+Embedded Engineer, Embedded Engineers are responsible for the software that runs on the PCB. This includes driving logic for audio, bluetooth, power management, etc.
+Industrial Designer, Industrial designers make sure the device looks and behaves like something people will want to buy.
+Development Wages, This is what you will need to pay barebones development team.
+Wages, Gotta pay your team. Most of this will be spent on the development team.
+Leadership, In the beginning it's wise for leadership to keep wages low to minimize burn. Ultimately you will want to bring on VP of Sales, VP of Product, etc. For now keep burn low w/ the CEO wearing multiple hats
+CEO, Of course the CEO needs to live, so a minimal salary is in order.
+COGS, The Cost Of Goods Sold (COGS) is the total cost of each individual unit (in this case without any fixed cost amortized in). This includes the cost of the physical material used (Bill of Material, or BOM, Cost) as well as everything involved in the handling of the parts once they leave the factory.
+BOM, The Bill Of Material (BOM) cost is the total cost of each physical item used to manufacture the part. Generally These parts are a mix of electronics, metal, and plastic.
+Electronics, These are the circuit boards on which all the capacitors, resistors, Integrated Circutis (ICs), etc. are placed. This is where all the smarts of the device lives. 
+Main PCB, This is the Printed Circuit Board (PCB) that contains the majority of the functionality of the device.
+Daughter PCB, When there is a need for a secondary (usually smaller) Printed Circuit Board (PCB), it is usually referred to as a daughter board. You may need a daughter board if physical constraints prevent you from making the main PCB larger.
+Purchased, This is a bit of a misnomer as all of the parts are purchased (nothing is free after all). That said, the "Purchased Parts" category describes the parts that are included in our device but that we aren't designing. Things that are commonly "Purchased" include screws, batteries, glue, etc.
+LiPo Battery, The Lithium Polymer (LiPo) battery is a popular battery in consumer electronics.
+Speaker Drivers, The speaker drivers 
+Glue, Glue is an enormous pain in assembly. Using it is a tradeoff between design effort and design effort. Glued interfaces are easy to design and hard to manufacture. Conversely, other sealable bonding schemes such as ultrasonic welding or overmolded interfaces combined with snap-fits can be (depending on the geometry) more difficult to design but easier once tuned in manufacturing.
+Headphone Bag, Gotta get a fancy bag for those headphones!
+Accessory Cable, Cables are one of the things that is easy to forget about but that can add real cost. The cost shown here looks like it presumes a standard PVC-jacketed cable (what you might find on a standard wired mouse). If you're trying to push for that premium feel you may want to look more at something like a ThermoPlastic Elastomer (TPE) cable such as the ones you see on Macbook chargers.
+Screw, Generally design teams try to avoid the use of screws in devices that don't need to be regularly (if ever) disassembled. That said, in some cases a well-placed screw or two can give you reliability and retention force that is difficult to achieve with plastic.
+Packaging, Like the Accessory Cable, Packaging is one of those things that is easy to not think about. This is particularly dangerous because the cost range can be so high. Anywhere from under a dollar to $20 is fare game depending on what you are looking for. Those fancy boxes that bring you iPhones aren't cheap.
+Gift Box, Estimating by cost, Bolt has opted for what I would describe as an upper-middle class level of pacakging. 
+Gift Box Top Insert, Estimating by cost, Bolt has opted for what I would describe as an upper-middle class level of pacakging. 
+Gift Box Bottom Insert, Estimating by cost, Bolt has opted for what I would describe as an upper-middle class level of pacakging. 
+Stamped, Stamped parts are parts that start as flat sheetmetal and are then formed into shape by a hydraulic press with a die attached to it. These parts are generally used where strength is needed and space is tight. Also they can be very inexpensive when produced in large quantities.
+Molded, Molded parts are plastic parts that are formed by the injection molding process. When designed properly, these parts can have a nice finish, sufficient strength, and low cost. Nearly every piece of plastic on any consumer product you might buy was made by injection molding. 

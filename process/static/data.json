@@ -1,0 +1,166 @@
+{
+  "phases":{
+    "planning":"Planning",
+    "architecture":"Architecture",
+    "poc":"Proof of Concept",
+    "alpha":"Alpha",
+    "rfq":"RFQ/DFX",
+    "evt":"EVT",
+    "dvt":"DVT",
+    "pvt":"PVT",
+    "mp":"MP/Sustaining"},
+  
+  "disciplines":{
+    "pm":"Project Management",
+    "id":"Industrial Design",
+    "me":"Mechanical Engineering",
+    "ee":"Electrical Engineering",
+    "es":"Embedded Systems"},
+
+  "blocks": [
+    {
+      "phase": "planning",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "architecture",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "poc",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "alpha",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "rfq",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "evt",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "dvt",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "pvt",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "mp",
+      "discipline": "me",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "planning",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "architecture",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "poc",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "alpha",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "rfq",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "evt",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "dvt",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "pvt",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "mp",
+      "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    }
+  ]
+}

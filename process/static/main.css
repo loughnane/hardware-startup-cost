@@ -3,7 +3,8 @@
 }
 
 rect{
-	fill-opacity:40%;
+	fill-opacity:80%;
+	rx:10;
 }
 
 text{
@@ -16,27 +17,29 @@ text{
 
 
 #pm{
-	fill:#f5b5c8;
+	fill:#b3e2cd;
 }
 
 #id{
-	fill:#ce6925;
+	fill:#fdcdac;
 }
 
 #me{
-	fill:#83bbe5;
+	fill:#cbd5e8;
 }
 
 #ee{
-	fill:#5abaa7;
+	fill:#f4cae4;
 }
 
 #es{
-	fill:#ffdf71;
+	fill:#e6f5c9;
 }
 
 .cell.active{
-	fill:#333333;
+	/*fill:#333333;*/
+	stroke:rgba(255,0,0,1);
+	stroke-width:5px;
 }
 
 .cell.inactive{

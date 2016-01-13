@@ -39,7 +39,7 @@ window.onload=function(){
 
     //overall parameters
     var width = 1400;
-    var height = 1000;
+    var height = 800;
     var margin = 25;
 
     //scales
@@ -63,7 +63,17 @@ window.onload=function(){
 
 
     //////////////BINDING
-  
+  var headings = svg.selectAll(".heading")
+    .data(phase_keys)
+    .enter()
+    .append("g")
+    .attr("class","heading")
+    .attr("transform",function(d,i){return "translate(" + x(i*.9+1.3) + "," + y(0.5)+")"})
+    .append('text')
+    .text(function(d){return phases[d]})
+
+
+
     //map the rows to the top level objects in the array
     var row = svg.selectAll(".row")
       .data(matrix)
@@ -71,7 +81,7 @@ window.onload=function(){
       .append("g")
       .attr("class", "row")
       .attr("id",function(d,i){ return discipline_keys[i]})
-      .attr("transform", function(d, i) { return "translate(0," + y(i) + ")"; })
+      .attr("transform", function(d, i) { return "translate(0," + y(i+0.6) + ")"; })
       .each(row);
 
     //for each row above, iterate through it's objects and draw rectangles
@@ -82,13 +92,14 @@ window.onload=function(){
             .data(row)
             .enter()
             .append("g")
-            .attr("transform",function(d,i){return "translate(" + x(d.x) +",0)"});
+            .attr("transform",function(d,i){return "translate(" + x(d.x*.9+1) +",0)"});
 
             //append the rectange to the selection
             cell.append("rect")
             .attr("class", "cell")    
             .attr("width", x(0.8))
             .attr("height", y(0.9))
+
             .on("mouseover", mouseover)
             .on("mouseout", mouseout);
 
@@ -106,23 +117,12 @@ window.onload=function(){
       .enter()
       .append('text')
       .attr("x",x(0.05))
-      .attr("y",function(d,i){return y(0.15)*i+25})
+      .attr("y",function(d,i){return y(0.07)*i+y(0.1)})
       .attr("font-size",y(0.05))
-      .text(function(d){return d})
+      .text(function(d){return "- " + d});
 
     }
-    //   console.log(task)
-    //   var text = d3.select(this).selectAll(".text")
-    //     .data(task)
-    //     .enter();
-        
-    //     text.append('text');
-    //     // console.log(text)
-    //       // .attr("x",x(0.1))
-    //       // .attr("y",50)
-    //       // .attr("class","tasks")
-    //       // .text(
-    //     }
+
 
     //////////INTERACTIVITY
 

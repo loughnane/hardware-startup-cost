@@ -1,57 +1,76 @@
 {
-  "phases":{
-    "planning":"Planning",
-    "architecture":"Architecture",
-    "poc":"Proof of Concept",
-    "alpha":"Alpha",
-    "rfq":"RFQ/DFX",
-    "evt":"EVT",
-    "dvt":"DVT",
-    "pvt":"PVT",
-    "mp":"MP/Sustaining"},
-  
-  "disciplines":{
-    "pm":"Project Management",
-    "id":"Industrial Design",
-    "me":"Mechanical Engineering",
-    "ee":"Electrical Engineering",
-    "es":"Embedded Systems"},
-
+  "phases": {
+    "planning": "Planning",
+    "architecture": "Architecture",
+    "poc": "Proof of Concept",
+    "alpha": "Alpha",
+    "rfq": "RFQ/DFX",
+    "evt": "EVT",
+    "dvt": "DVT",
+    "pvt": "PVT",
+    "mp": "MP/Sustaining"
+  },
+  "disciplines": {
+    "pm": "Project Management",
+    "id": "Industrial Design",
+    "me": "Mechanical Engineering",
+    "ee": "Electrical Engineering",
+    "es": "Embedded Systems"
+  },
   "blocks": [
-      {
+    {
       "phase": "planning",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Define Product",
+        "Define Market",
+        "Define Volume & Cost Targets",
+        "Define Budget",
+        "Define Schedule",
+        "Define Stakeholders",
+        "Define Responsibilities/Staffing",
+        "Identify Key Demos and Integrations",
+        "Idnetify NPI Support",
+        "Idnetify Poteitnail IP Issues",
+        "Define Success"
       ]
     },
     {
       "phase": "architecture",
       "discipline": "pm",
       "tasks": [
-        "Identify Environmental Factors",
-        "Define Operating Ranges",
-        "Identify Critical Features",
-        "Draft Critical Feature Designs",
-        "Identify Regulatory Requirement Risks",
-        "Identify performance metrics"
+        "Draft PRD",
+        "Draft Program Development Plan",
+        "Draft Regulatory Plan",
+        "Create Resource Plan",
+        "Create Communication Plan",
+        "Generate and Maintain OIL",
+        "Updated Responsibilites/Staffing"
       ]
     },
     {
       "phase": "poc",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Update PRD",
+        "Update Regulatory Plan",
+        "Maintain OIL",
+        "Cross-Functional Risks/Req's",
+        "Manage/Message Risks",
+        "Manage/Plan Demos"
       ]
     },
     {
       "phase": "alpha",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Update PRD",
+        "Maintain OIL",
+        "Manage/Message Risks",
+        "Monitor System Integration",
+        "Manage Vendor Relationship",
+        "Mediate ID, Cost, Performance Battles",
+        "Manage/Plan Demos"
       ]
     },
     {

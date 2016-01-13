@@ -2,8 +2,16 @@
 	fill:#fff;
 }
 
-.row{
+rect{
 	fill-opacity:40%;
+}
+
+text{
+	fill:#333333;
+}
+
+.tasks{
+	fill:#333333;
 }
 
 

@@ -1,53 +1,24 @@
-var stringify = function (x) {
-  if (typeof(x) === 'number' || x === undefined) {
-    return String(x);
-    // otherwise it won't work for:
-    // NaN, Infinity, undefined
-  } else {
-    return JSON.stringify(x);
-  }
-};
-
-
-var indexify = function(mat){
-// converts a matrix into a sparse-like entries
-// maybe 'expensive' for large matrices, but helps keeping code clean
-    var res = [];
-    for(var i = 0; i < mat.length; i++){
-        for(var j = 0; j < mat[0].length; j++){
-            res.push({i:i, j:j, val:mat[i][j]});
-        }
-    }
-    return res;
-};
-
-
 
 window.onload=function(){
 
 
   var load_all = function(){
-    //This function loads the data from CSV, configures it, and
-    //then passes it to another funcftion for visualization creation
+
     d3.json("static/data.json", function(data){
 
+      //pull data from json file
       phases = data.phases;
       disciplines = data.disciplines;
       blocks = data.blocks;
       
+      //call main function
       main(phases,disciplines,blocks)
     });
   };
 
   var main = function(phases,disciplines,blocks){
 
-    //Set some sizing parameters
-    var width = 1700;
-    var height = 1000;
-    var margin = 25;
-    console.log(blocks)
-
-    //breaking down data
+    ////////////SLICE UP DATA////////////
     phase_keys = Object.keys(phases)
     phase_count = phase_keys.length
 
@@ -55,69 +26,105 @@ window.onload=function(){
     discipline_count = discipline_keys.length
 
 
-
-    var discipline_names = [];
-    for (var p_key in disciplines) {
-        if (disciplines.hasOwnProperty(p_key)) {
-          discipline_names.push(disciplines[p_key]);
-        };
-
-      };
     //compute index per node
     var matrix = []
-    discipline_names.forEach(function(phase,i){
-      phase.index = i;
-      phase.count = 0
+    discipline_keys.forEach(function(discipline,i){
+      discipline.index = i;
+      discipline.count = 0
       matrix[i] = d3.range(phase_count).map(function(j) { return {x:j,y:i,z:0};});
     });
 
-    console.log(matrix)
-    //setting scales
+
+    ////////////SIZING////////
+
+    //overall parameters
+    var width = 1400;
+    var height = 1000;
+    var margin = 25;
+
+    //scales
     var x = d3.scale.linear()
       .domain([0,phase_count])
       .range([0,width*0.9]);
+
     var y = d3.scale.linear()
       .domain([0,phase_count])
       .range([0,height*0.9]);
 
 
-    //selections
+    ///////////////SELECTIONS
     var body = d3.select('body');
     
     var svg = body.append('svg')
     .attr('width', width)
     .attr('height', height);
 
-    //bindings
-
-    var chris = body.append('chris')
+    // var chris = body.append('chris')
 
 
- var row = svg.selectAll(".row")
+    //////////////BINDING
+  
+    //map the rows to the top level objects in the array
+    var row = svg.selectAll(".row")
       .data(matrix)
       .enter()
       .append("g")
       .attr("class", "row")
-      .attr("id",function(d,i){
-        // console.log(disciplines)
-        return discipline_keys[i]
-      })
+      .attr("id",function(d,i){ return discipline_keys[i]})
       .attr("transform", function(d, i) { return "translate(0," + y(i) + ")"; })
       .each(row);
 
-function row(row) {
-    var cell = d3.select(this).selectAll(".cell")
-        .data(row)
-        .enter()
-        .append("rect")
-        .attr("class", "cell")    
-        .attr("x", function(d,i) { 
-          // console.log(d)
-          return (x(d.x)); })
-        .attr("width", x(0.8))
-        .attr("height", y(0.9))
-        .on("mouseover", mouseover)
-        .on("mouseout", mouseout);
+    //for each row above, iterate through it's objects and draw rectangles
+    function row(row) {
+
+        //create and store the selection
+        var cell = d3.select(this).selectAll(".cell")
+            .data(row)
+            .enter()
+            .append("g")
+            .attr("transform",function(d,i){return "translate(" + x(d.x) +",0)"});
+
+            //append the rectange to the selection
+            cell.append("rect")
+            .attr("class", "cell")    
+            .attr("width", x(0.8))
+            .attr("height", y(0.9))
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+
+            //for each cell, run a new function
+            cell.each(tasks)
+
+      }
+
+    //iterate through tasks for each cel
+    function tasks(tasks){
+      task_list= blocks.filter(function(d){
+        return d.phase===phase_keys[tasks.x] && d.discipline===discipline_keys[tasks.y]})[0].tasks
+    d3.select(this).selectAll(".text")
+      .data(task_list)
+      .enter()
+      .append('text')
+      .attr("x",x(0.05))
+      .attr("y",function(d,i){return y(0.15)*i+25})
+      .attr("font-size",y(0.05))
+      .text(function(d){return d})
+
+    }
+    //   console.log(task)
+    //   var text = d3.select(this).selectAll(".text")
+    //     .data(task)
+    //     .enter();
+        
+    //     text.append('text');
+    //     // console.log(text)
+    //       // .attr("x",x(0.1))
+    //       // .attr("y",50)
+    //       // .attr("class","tasks")
+    //       // .text(
+    //     }
+
+    //////////INTERACTIVITY
 
  function mouseover(p) {
     phase_array = blocks.filter(function(d){return d.phase===phase_keys[p.x]})
@@ -135,8 +142,7 @@ function row(row) {
     d3.selectAll(".cell")
     .classed("active", false)
     .classed("inactive", false);
-  }
-  }    
+  }  
 
   };
   

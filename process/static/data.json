@@ -18,6 +18,158 @@
     "es":"Embedded Systems"},
 
   "blocks": [
+      {
+      "phase": "planning",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "architecture",
+      "discipline": "pm",
+      "tasks": [
+        "Identify Environmental Factors",
+        "Define Operating Ranges",
+        "Identify Critical Features",
+        "Draft Critical Feature Designs",
+        "Identify Regulatory Requirement Risks",
+        "Identify performance metrics"
+      ]
+    },
+    {
+      "phase": "poc",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "alpha",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "rfq",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "evt",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "dvt",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "pvt",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "mp",
+      "discipline": "pm",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "planning",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "architecture",
+      "discipline": "id",
+      "tasks": [
+        "Identify Environmental Factors",
+        "Define Operating Ranges",
+        "Identify Critical Features",
+        "Draft Critical Feature Designs",
+        "Identify Regulatory Requirement Risks",
+        "Identify performance metrics"
+      ]
+    },
+    {
+      "phase": "poc",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "alpha",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "rfq",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "evt",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "dvt",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "pvt",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "mp",
+      "discipline": "id",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
     {
       "phase": "planning",
       "discipline": "me",
@@ -30,8 +182,12 @@
       "phase": "architecture",
       "discipline": "me",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Identify Environmental Factors",
+        "Define Operating Ranges",
+        "Identify Critical Features",
+        "Draft Critical Feature Designs",
+        "Identify Regulatory Requirement Risks",
+        "Identify performance metrics"
       ]
     },
     {
@@ -157,6 +313,78 @@
     {
       "phase": "mp",
       "discipline": "ee",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "planning",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "architecture",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "poc",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "alpha",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "rfq",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "evt",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "dvt",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "pvt",
+      "discipline": "es",
+      "tasks": [
+        "do stuff",
+        "do other stuff"
+      ]
+    },
+    {
+      "phase": "mp",
+      "discipline": "es",
       "tasks": [
         "do stuff",
         "do other stuff"

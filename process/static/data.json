@@ -15,7 +15,7 @@
       ]
     },
     "poc": {
-      "title": "Proof of Concept",
+      "title": "PoC",
       "gates": [
         "one",
         "two"
@@ -57,7 +57,7 @@
       ]
     },
     "mp": {
-      "title": "Mass Production",
+      "title": "MP",
       "gates": [
         "one",
         "two"
@@ -131,48 +131,55 @@
       "phase": "rfq",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Orchestrate RFQ Package",
+        "Organize Test Plans (RET & Line)",
+        "Maintain OIL",
+        "Mediate Cost vs Perofrmance",
+        "Support IP",
+        "Factory Selection"
       ]
     },
     {
       "phase": "evt",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+"Update RACI with NPI/Ops Teams",
+"Mediate Design Transfer",
+"Manage/Message Risks"
       ]
     },
     {
       "phase": "dvt",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Manage Risks"
       ]
     },
     {
       "phase": "pvt",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Manage Risks"
       ]
     },
     {
       "phase": "mp",
       "discipline": "pm",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+        "Manage Risks",
+        "Prioritize SW Bugs/Features"
       ]
     },
     {
       "phase": "planning",
       "discipline": "id",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+"Define Deliverables for Architecture",
+"Define Requirements",
+"Define Potential Resources",
+"Estimate Material Costs",
+"Generate Architecture WBS/Project Plan",
+"Assess Risks"
       ]
     },
     {
@@ -247,8 +254,12 @@
       "phase": "planning",
       "discipline": "me",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+"Define Deliverables for Architecture",
+"Define Requirements",
+"Define Potential Resources",
+"Estimate Material Costs",
+"Generate Architecture WBS/Project Plan",
+"Assess Risks"
       ]
     },
     {
@@ -323,8 +334,12 @@
       "phase": "planning",
       "discipline": "ee",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+"Define Deliverables for Architecture",
+"Define Requirements",
+"Define Potential Resources",
+"Estimate Material Costs",
+"Generate Architecture WBS/Project Plan",
+"Assess Risks"
       ]
     },
     {
@@ -395,8 +410,12 @@
       "phase": "planning",
       "discipline": "es",
       "tasks": [
-        "do stuff",
-        "do other stuff"
+"Define Deliverables for Architecture",
+"Define Requirements",
+"Define Potential Resources",
+"Estimate Material Costs",
+"Generate Architecture WBS/Project Plan",
+"Assess Risks"
       ]
     },
     {

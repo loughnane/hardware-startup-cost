@@ -49,7 +49,7 @@ window.onload=function(){
     var matrix_offset_x = 1
 
     var general_clearance = 0.05
-    var heading_size = 0.1
+    var heading_size = 0.08
 
     var num_gates =3
     var gate_width = (1-cell_width-general_clearance*2)/num_gates

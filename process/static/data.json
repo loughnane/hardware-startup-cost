@@ -1,14 +1,68 @@
 {
   "phases": {
-    "planning": "Planning",
-    "architecture": "Architecture",
-    "poc": "Proof of Concept",
-    "alpha": "Alpha",
-    "rfq": "RFQ/DFX",
-    "evt": "EVT",
-    "dvt": "DVT",
-    "pvt": "PVT",
-    "mp": "MP/Sustaining"
+    "planning": {
+      "title": "Planning",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "poc": {
+      "title": "Proof of Concept",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "alpha": {
+      "title": "Alpha",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "rfq": {
+      "title": "RFQ",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "evt": {
+      "title": "EVT",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "dvt": {
+      "title": "DVT",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "pvt": {
+      "title": "PVT",
+      "gates": [
+        "one",
+        "two"
+      ]
+    },
+    "mp": {
+      "title": "Mass Production",
+      "gates": [
+        "one",
+        "two"
+      ]
+    }
   },
   "disciplines": {
     "pm": "Project Management",

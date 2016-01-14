@@ -1,14 +1,24 @@
+
+* {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 #background{
 	fill:#fff;
 }
 
-rect{
+rect.cell{
 	fill-opacity:80%;
-	rx:10;
+	rx:5;
+}
+rect.gate{
+	fill:#bcbbc1;
+	rx:2;
 }
 
 text{
 	fill:#333333;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 .tasks{
@@ -34,6 +44,9 @@ text{
 
 #es{
 	fill:#e6f5c9;
+}
+.heading{
+	/*font-size:10px;*/
 }
 
 .cell.active{

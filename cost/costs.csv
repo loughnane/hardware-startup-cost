@@ -43,8 +43,8 @@ Selling Costs-Empty-Empty-Empty-Order Fullfillment,11800
 
 
 Mechanical Engineer, Mechanical Engineers are responsible for every physical element that is not the circuit board. They will spend a lot of time thinking about how the parts will be fabricated & assembled, as well as how well the finished good will stand up to They generally work closely with Industrial Designers and Electrical Engineers.
-Electrical Engineer, Electrical Engineers are responsible for the design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
-Embedded Engineer, Embedded Engineers are responsible for the software that runs on the PCB. This includes driving logic for audio, bluetooth, power management, etc.
+Electrical Engineer, Electrical Engineers are responsible for the system architecure design and layout of the circuit boards. They also play a key role in antenna design. They will spend a lot of time thinking about power architecture, component selection, and component placement. 
+Embedded Engineer, Embedded Engineers are responsible for the software that runs on the PCBA. This includes driving logic for audio, bluetooth, power management, etc. They work closely with Electrical Engineers
 Industrial Designer, Industrial designers make sure the device looks and behaves like something people will want to buy.
 Development Wages, This is what you will need to pay barebones development team.
 Wages, Gotta pay your team. Most of this will be spent on the development team.

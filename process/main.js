@@ -26,7 +26,7 @@ window.onload=function(){
     discipline_count = discipline_keys.length
 
 
-    //compute index per node
+    //COMPUTE INDEX PER NODE
     var matrix = []
     discipline_keys.forEach(function(discipline,i){
       discipline.index = i;
@@ -34,10 +34,7 @@ window.onload=function(){
       matrix[i] = d3.range(phase_count).map(function(j) { return {x:j,y:i,z:0};});
     });
 
-
-    ////////////SIZING////////
-
-    //overall parameters
+    //SIZING PARAMETERS
     var width = 1200;
     var height = 500;
     var margin = 25;
@@ -54,7 +51,8 @@ window.onload=function(){
     var num_gates =3
     var gate_width = (1-cell_width-general_clearance*2)/num_gates
 
-    //scales
+
+    //SCALES
     var x = d3.scale.linear()
       .domain([0,phase_count+matrix_offset_x])
       .range([0,width]);
@@ -65,13 +63,18 @@ window.onload=function(){
 
 
     ///////////////SELECTIONS
-    var body = d3.select('body');
+    var body = d3.select('body')
+      .style("width",width+ 'px');
     
     var svg = body.append('svg')
-    .attr('width', width)
-    .attr('height', height);
+      .attr('width', '100%')
+      .attr('height', height);
 
-    // var chris = body.append('chris')
+    var sidebar = body.append('sidebar')
+      .style("width",width+'px');
+
+    var phase_desc = sidebar.append("phase_description")
+      // .style("width","30%")
 
 
     //////////////BINDING
@@ -170,14 +173,28 @@ window.onload=function(){
  function mouseover(p) {
     phase_array = blocks.filter(function(d){return d.phase===phase_keys[p.x]})
     cell = phase_array.filter(function(d){return d.discipline===discipline_keys[p.y]})[0]
-    console.log(p)
+
+    // d3.selectAll("")
+    current_phase = phases[phase_keys[p.x]]
+    description_array = current_phase.description.split("\n")
+    // console.log(description_array)
+    phase_desc.html("<h2>" + current_phase.title + "</h2>")
+
+    x = phase_desc.selectAll("phase_description")
+      .data(description_array)
+      .enter()
+      .append("p")
+      .text(function(d){return d});
+
     d3.selectAll(".cell")
     .classed("active", function(d, i) { 
       return d.x == p.x && d.y == p.y; })
     // .classed("inactive", function(d, i) { 
     //   return d.x !== p.x || d.y!== p.y; });
+
     
   }
+
 
   function mouseout() {
     d3.selectAll(".cell")

@@ -2,6 +2,7 @@
   "phases": {
     "planning": {
       "title": "Planning",
+      "description": "The planning phase consists of defining a first pass at the product & staffing requirements \nThis is also a good time to conduct research",
       "gates": [
         "one",
         "two"
@@ -9,6 +10,7 @@
     },
     "architecture": {
       "title": "Architecture",
+      "description": "This is a description of \n architecture",
       "gates": [
         "one",
         "two"
@@ -16,6 +18,7 @@
     },
     "poc": {
       "title": "PoC",
+      "description": "This is a description of poc",
       "gates": [
         "one",
         "two"
@@ -23,6 +26,7 @@
     },
     "alpha": {
       "title": "Alpha",
+      "description": "This is a description of Alpha",
       "gates": [
         "one",
         "two"
@@ -30,6 +34,7 @@
     },
     "rfq": {
       "title": "RFQ",
+      "description": "This is a description of rfq",
       "gates": [
         "one",
         "two"
@@ -37,6 +42,7 @@
     },
     "evt": {
       "title": "EVT",
+      "description": "This is a description of evt",
       "gates": [
         "one",
         "two"
@@ -44,6 +50,7 @@
     },
     "dvt": {
       "title": "DVT",
+      "description": "This is a description of dvt",
       "gates": [
         "one",
         "two"
@@ -51,6 +58,7 @@
     },
     "pvt": {
       "title": "PVT",
+      "description": "This is a description of pvt",
       "gates": [
         "one",
         "two"
@@ -58,6 +66,7 @@
     },
     "mp": {
       "title": "MP",
+      "description": "This is a description of mp",
       "gates": [
         "one",
         "two"
@@ -85,7 +94,7 @@
         "Define Responsibilities/Staffing",
         "Identify Key Demos and Integrations",
         "Idnetify NPI Support",
-        "Idnetify Poteitnail IP Issues",
+        "Idnetify Potential IP Issues",
         "Define Success"
       ]
     },

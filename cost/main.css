@@ -1,0 +1,76 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #fff;
+  width: 1280px;
+  height: 933px;
+  margin-top: 10px;
+}
+
+#main {
+  float: left;
+  width: 1500px;
+}
+#intro {
+  float: left;
+  width: 800px;
+  height: 100px;
+  font-size: 24px;
+}
+
+#sidebar {
+  float: left;
+  width: 800px;
+}
+
+#description   {
+  float: left;
+  font-size: 2.0em;
+}
+
+#sequence {
+  float:left;
+  width: 800px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+s
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+#chart path {
+  stroke: #fff;
+  stroke-width: 2px;
+
+}
+
+#explanation {
+  position: absolute;
+  top: 365px;
+/*  left: 185px;*/
+  width: 800px;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+}
+
+#total {
+  font-size: 2.5em;
+}
+
+#node {
+  font-size: 2.0em;
+}
